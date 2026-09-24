@@ -55,13 +55,11 @@ A plataforma busca facilitar o acesso dos alunos à alimentação, dar maior vis
 
 ## Principais funcionalidades
 
-* Cadastro de alunos e vendedores;
+* Cadastro de vendedores;
 * Cadastro e divulgação de produtos;
 * Consulta de vendedores;
 * Localização e horários de funcionamento;
-* Pedidos para retirada;
 * Avaliações;
 * Solicitação de autorização;
 * Envio e análise de documentos;
-* Controle dos vendedores autorizados;
-* QR Code para identificação do vendedor.
+* Controle dos vendedores autorizado.
