@@ -1,0 +1,6 @@
+{
+  "name": "UniEats Campus UnB",
+  "description": "Plataforma institucional de alimentação autorizada, conformidade sanitária e marketplace de quiosques e ambulantes no Campus Darcy Ribeiro - UnB.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
