@@ -12,14 +12,14 @@ UniEats is a web platform that combines an **accreditation management system** w
 ┌──────────────────────────────────────────────────────────┐
 │                      UniEats Platform                    │
 │                                                          │
-│  ┌─────────────┐   ┌─────────────┐   ┌───────────────┐  │
-│  │   Student   │   │   Vendor    │   │  Admin        │  │
-│  │ (anonymous) │   │(authenticated)│ │(authenticated)│  │
-│  └──────┬──────┘   └──────┬──────┘   └───────┬───────┘  │
+│  ┌─────────────┐   ┌─────────────┐   ┌───────────────┐   │
+│  │   Student   │   │   Vendor    │   │  Admin        │   │
+│  │ (anonymous) │   │(authenticated)│ │(authenticated)│   │
+│  └──────┬──────┘   └──────┬──────┘   └───────┬───────┘   │
 │         │                 │                  │           │
 │  ┌──────▼─────────────────▼──────────────────▼───────┐   │
 │  │                   Web Application                 │   │
-│  │         (React SPA + REST API)                    │   │
+│  │         (HTML/CSS/JS + REST API)                  │   │
 │  └───────────────────────┬───────────────────────────┘   │
 │                          │                               │
 │  ┌───────────────────────▼───────────────────────────┐   │
@@ -28,7 +28,7 @@ UniEats is a web platform that combines an **accreditation management system** w
 │  └───────────────────────┬───────────────────────────┘   │
 │                          │                               │
 │  ┌───────────────────────▼───────────────────────────┐   │
-│  │                  PostgreSQL Database               │   │
+│  │                  PostgreSQL Database              │   │
 │  └───────────────────────────────────────────────────┘   │
 └──────────────────────────────────────────────────────────┘
 ```
@@ -37,8 +37,8 @@ UniEats is a web platform that combines an **accreditation management system** w
 
 ## Architecture Style
 
-- **Frontend:** Single Page Application (SPA) — React
-- **Backend:** RESTful API
+- **Frontend:** HTML, CSS, JavaScript (Vanilla)
+- **Backend:** RESTful API (Python + FastAPI)
 - **Database:** Relational (PostgreSQL)
 - **Storage:** File storage for uploaded documents (e.g., S3-compatible or local)
 - **Auth:** JWT-based authentication with role-based access control (RBAC)
@@ -47,7 +47,7 @@ UniEats is a web platform that combines an **accreditation management system** w
 
 ## Layers
 
-### 1. Presentation Layer (Frontend — React)
+### 1. Presentation Layer (Frontend — HTML/CSS/JS)
 
 Handles all UI rendering and user interactions. Split into three main areas:
 
@@ -203,7 +203,9 @@ Persists all application data. Key entities described in the [Data Model](#data-
 
 ---
 
-## API Routes (Summary)
+## API Specification & Routes (Summary)
+
+A especificação completa da API (Swagger UI) será gerada automaticamente pelo FastAPI e ficará disponível na rota `/docs`.
 
 ### Public
 ```
@@ -254,7 +256,7 @@ PUT  /api/admin/sales-points/:id                  → update sales point
 
 | Concern | Approach |
 |---|---|
-| Authentication | JWT (access + refresh tokens) |
+| Authentication | JWT (access + refresh tokens). Token armazenado no `localStorage` do navegador (requer tratamento contra XSS) |
 | Password storage | bcrypt hashing |
 | Authorization | RBAC middleware (vendor / admin / public) |
 | File uploads | Type and size validation; stored outside web root |
@@ -272,38 +274,45 @@ PUT  /api/admin/sales-points/:id                  → update sales point
 
 ---
 
-## Tech Stack (Suggested)
+## Tech Stack (Official)
 
 | Layer | Technology |
 |---|---|
-| Frontend | React + React Router + Axios |
-| Backend | Node.js + Express (or Python + FastAPI) |
+| Frontend | HTML, CSS, JavaScript (Vanilla) + Fetch API |
+| Backend | Python + FastAPI |
 | Database | PostgreSQL |
-| ORM | Prisma (Node) or SQLAlchemy (Python) |
-| Auth | JWT (jsonwebtoken / python-jose) |
+| ORM | SQLAlchemy (Python) |
+| Auth | JWT (python-jose) |
 | File storage | Local filesystem (MVP) → S3-compatible (production) |
-| QR code | `qrcode` npm package or `qrcode` Python library |
-| Scheduler | node-cron (Node) or APScheduler (Python) |
+| QR code | `qrcode` Python library |
+| Scheduler | APScheduler (Python) |
 | Containerization | Docker + Docker Compose |
 
 ---
 
-## Folder Structure (Backend — Node/Express example)
+## Repository Initialization & Folder Structure
 
-```
-src/
-├── config/          # Environment, DB connection
-├── middlewares/     # Auth, RBAC, error handling
-├── modules/
-│   ├── auth/
-│   ├── vendor/
-│   ├── admin/
-│   ├── marketplace/
-│   ├── documents/
-│   └── qrcode/
-├── jobs/            # Scheduled tasks
-├── utils/           # Helpers (hashing, QR gen, etc.)
-└── app.js
+Para mitigar a ausência de código inicial e preparar o terreno, o repositório deve ser inicializado com a seguinte estrutura básica:
+
+```text
+/
+├── frontend/             # HTML, CSS, JS estáticos
+│   ├── index.html        # Marketplace
+│   ├── css/
+│   ├── js/
+│   └── vendor_panel.html
+├── backend/              # Aplicação FastAPI
+│   ├── app/
+│   │   ├── main.py       # Ponto de entrada (App FastAPI)
+│   │   ├── core/         # Configurações, Segurança
+│   │   ├── models/       # Modelos SQLAlchemy
+│   │   ├── schemas/      # Schemas Pydantic
+│   │   ├── api/          # Rotas e Endpoints
+│   │   ├── services/     # Regras de Negócio e Agendadores
+│   │   └── utils/
+│   ├── requirements.txt  # Dependências Python
+│   └── alembic/          # Migrações de Banco de Dados
+└── README.md
 ```
 
 ---
