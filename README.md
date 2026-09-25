@@ -63,3 +63,12 @@ A plataforma busca facilitar o acesso dos alunos à alimentação, dar maior vis
 * Solicitação de autorização;
 * Envio e análise de documentos;
 * Controle dos vendedores autorizado.
+
+## Figma
+
+* Business Model Canvas
+* Lean Canvas
+* Value Proposition Canvas
+* Mapa de Empatia
+
+https://www.figma.com/make/VWvhKs5mozDiW3DJq2XSHt/Business-Model-and-Lean-Canvas?t=3AeyL4tBuKIc6rmA-1
