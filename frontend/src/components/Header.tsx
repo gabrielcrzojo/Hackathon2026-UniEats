@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({
   const roleLabels: Record<UserRole, { title: string; subtitle: string; icon: string }> = {
     student: { title: 'Comunidade UnB', subtitle: 'Estudante / Visitante', icon: 'school' },
     vendor: { title: 'Ana Paula Rocha', subtitle: 'Vendedora (Ponto #04)', icon: 'storefront' },
-    dac_admin: { title: 'Fiscalização DAC', subtitle: 'Campus Darcy Ribeiro', icon: 'verified_user' }
+    dac_admin: { title: 'Fiscalização DAC', subtitle: 'Campus Gama', icon: 'verified_user' }
   };
 
   return (
@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Polo Badge */}
           <div className="hidden xl:flex items-center gap-1.5 px-2.5 py-1 bg-[#f0f3ff] rounded-full border border-slate-200/60 shrink-0">
             <span className="material-symbols-outlined text-[#006e22] text-sm">location_on</span>
-            <span className="text-xs font-semibold text-[#001e40]">Campus Darcy Ribeiro</span>
+            <span className="text-xs font-semibold text-[#001e40]">Campus Gama</span>
             <span className="w-1.5 h-1.5 rounded-full bg-[#006e22] ml-0.5"></span>
           </div>
 
@@ -163,7 +163,7 @@ export const Header: React.FC<HeaderProps> = ({
                   </div>
                   <div className="p-2 rounded-lg bg-blue-50 border border-blue-200/60 text-blue-900">
                     <span className="font-bold block">Novo Ponto Homologado</span>
-                    Edital DAC 2025: 4 pontos liberados para inscrição no Darcy Ribeiro.
+                    Edital DAC 2025: 4 pontos liberados para inscrição no Campus Gama.
                   </div>
                 </div>
                 <button
@@ -292,7 +292,7 @@ export const Header: React.FC<HeaderProps> = ({
               type="text"
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              placeholder="Buscar marmitas, lanches, Darcy Ribeiro..."
+              placeholder="Buscar marmitas, lanches, Campus Gama..."
               className="w-full px-3 py-2 bg-slate-50 rounded-lg border border-slate-200 text-xs"
             />
           </div>

@@ -125,7 +125,7 @@ export const QrScannerModal: React.FC<QrScannerModalProps> = ({
           {/* Quick presets for test */}
           <div>
             <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block mb-2">
-              Pontos Cadastrados no Darcy Ribeiro (Teste Rápido):
+              Pontos Cadastrados no Campus Gama (Teste Rápido):
             </span>
             <div className="grid grid-cols-2 gap-2">
               {vendors.slice(0, 4).map(v => (

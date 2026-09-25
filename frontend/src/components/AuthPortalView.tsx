@@ -39,7 +39,7 @@ export const AuthPortalView: React.FC<AuthPortalViewProps> = ({
   const [candCpf, setCandCpf] = useState('');
   const [candEmail, setCandEmail] = useState('');
   const [candPhone, setCandPhone] = useState('619');
-  const [candZone, setCandZone] = useState<CampusZone>('icc-norte');
+  const [candZone, setCandZone] = useState<CampusZone>('uac');
   const [candCategory, setCandCategory] = useState<FoodCategory>('lanches');
   const [candDescription, setCandDescription] = useState('');
 
@@ -119,7 +119,7 @@ export const AuthPortalView: React.FC<AuthPortalViewProps> = ({
           <div className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-1">
             <span>PORTAL OFICIAL DE ACESSO</span>
             <span>•</span>
-            <span className="text-[#006e22]">Campus Darcy Ribeiro</span>
+            <span className="text-[#006e22]">Campus Gama</span>
           </div>
           <h2 className="text-2xl font-bold text-[#001e40] tracking-tight">
             Credenciamento & Operação
@@ -363,12 +363,13 @@ export const AuthPortalView: React.FC<AuthPortalViewProps> = ({
                   onChange={(e) => setCandZone(e.target.value as CampusZone)}
                   className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs"
                 >
-                  <option value="icc-norte">ICC Norte</option>
-                  <option value="icc-sul">ICC Sul</option>
-                  <option value="bsa">Bolsão da BSA</option>
-                  <option value="ft">Faculdade de Tecnologia (FT)</option>
-                  <option value="bce">Biblioteca Central (BCE)</option>
-                  <option value="pat">Pavilhão Anísio Teixeira (PAT)</option>
+                  <option value="uac">UAC (Unidade Acadêmica)</option>
+                  <option value="ued">UED (Docência & Labs)</option>
+                  <option value="ldtea">LDTEA (Laboratórios)</option>
+                  <option value="ru-mesp">RU / MESP</option>
+                  <option value="convivencia">Centro de Convivência</option>
+                  <option value="biblioteca">Biblioteca FGA</option>
+                  <option value="estacionamento">Estacionamento Central</option>
                 </select>
               </div>
 

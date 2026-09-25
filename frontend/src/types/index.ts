@@ -1,12 +1,12 @@
 export type CampusZone = 
   | 'todos'
-  | 'icc-norte'
-  | 'icc-sul'
-  | 'bsa'
-  | 'ft'
-  | 'bce'
-  | 'pat'
-  | 'reitoria';
+  | 'uac'
+  | 'ued'
+  | 'ldtea'
+  | 'ru-mesp'
+  | 'convivencia'
+  | 'biblioteca'
+  | 'estacionamento';
 
 export type FoodCategory =
   | 'todos'

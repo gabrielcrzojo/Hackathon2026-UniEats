@@ -20,7 +20,7 @@ export const NewPointModal: React.FC<NewPointModalProps> = ({
   onSave
 }) => {
   const [pointName, setPointName] = useState('');
-  const [zone, setZone] = useState<CampusZone>('icc-norte');
+  const [zone, setZone] = useState<CampusZone>('uac');
   const [category, setCategory] = useState('Alimentação Quente / Marmitas');
   const [seiProcess, setSeiProcess] = useState('23106.004921/2026-44');
   const [facilities, setFacilities] = useState<string[]>([
@@ -41,13 +41,13 @@ export const NewPointModal: React.FC<NewPointModalProps> = ({
 
   const zoneNames: Record<CampusZone, string> = {
     'todos': 'Geral',
-    'icc-norte': 'ICC Norte',
-    'icc-sul': 'ICC Sul',
-    'bsa': 'BSA (Biológicas)',
-    'bce': 'BCE (Biblioteca Central)',
-    'ft': 'FT (Tecnologia)',
-    'pat': 'PAT (Pavilhão Anísio Teixeira)',
-    'reitoria': 'Reitoria'
+    'uac': 'UAC (Unidade Acadêmica)',
+    'ued': 'UED (Docência & Labs)',
+    'ldtea': 'LDTEA (Laboratórios)',
+    'ru-mesp': 'RU / MESP',
+    'convivencia': 'Centro de Convivência',
+    'biblioteca': 'Biblioteca FGA',
+    'estacionamento': 'Estacionamento Central'
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -77,7 +77,7 @@ export const NewPointModal: React.FC<NewPointModalProps> = ({
               Cadastrar Novo Ponto de Venda
             </h3>
             <p className="text-xs text-slate-500">
-              Homologação de espaço físico no Campus Darcy Ribeiro (DAC / SINFRA)
+              Homologação de espaço físico no Campus Gama (DAC / SINFRA)
             </p>
           </div>
           <button
@@ -98,7 +98,7 @@ export const NewPointModal: React.FC<NewPointModalProps> = ({
               required
               value={pointName}
               onChange={e => setPointName(e.target.value)}
-              placeholder="Ex: Ponto #19 - ICC Ala Central"
+              placeholder="Ex: Ponto #19 - UAC Pátio Central"
               className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#003366]"
             />
           </div>
@@ -113,13 +113,13 @@ export const NewPointModal: React.FC<NewPointModalProps> = ({
                 onChange={e => setZone(e.target.value as CampusZone)}
                 className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#003366]"
               >
-                <option value="icc-norte">ICC Norte</option>
-                <option value="icc-sul">ICC Sul</option>
-                <option value="bsa">BSA (Biológicas)</option>
-                <option value="bce">BCE (Biblioteca Central)</option>
-                <option value="ft">FT (Tecnologia)</option>
-                <option value="pat">PAT (Pavilhão Anísio Teixeira)</option>
-                <option value="reitoria">Reitoria</option>
+                <option value="uac">UAC (Unidade Acadêmica)</option>
+                <option value="ued">UED (Docência & Labs)</option>
+                <option value="ldtea">LDTEA (Laboratórios)</option>
+                <option value="ru-mesp">RU / MESP</option>
+                <option value="convivencia">Centro de Convivência</option>
+                <option value="biblioteca">Biblioteca FGA</option>
+                <option value="estacionamento">Estacionamento Central</option>
               </select>
             </div>
 

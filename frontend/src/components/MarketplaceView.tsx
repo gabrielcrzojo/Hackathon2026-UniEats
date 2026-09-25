@@ -68,20 +68,13 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
         <div className="absolute top-1/2 -left-20 w-80 h-80 rounded-full bg-[#80fd88]/15 blur-3xl pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          {/* Breadcrumb & Direct Access Tag */}
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-            <div className="flex items-center gap-2 text-slate-500 text-xs">
-              <span className="font-semibold text-[#001e40]">UnB Darcy Ribeiro</span>
-              <span className="text-slate-300">/</span>
-              <span>Rede Gastronômica Universitária</span>
-              <span className="text-slate-300">/</span>
-              <span className="text-[#006e22] font-semibold">Credenciamento Ativo</span>
-            </div>
-
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-slate-700 shadow-xs text-xs">
-              <span className="w-2 h-2 rounded-full bg-[#006e22] animate-ping"></span>
-              <span className="font-semibold text-slate-800">Acesso Livre sem Login para Estudantes</span>
-            </div>
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-slate-500 text-xs mb-4">
+            <span className="font-semibold text-[#001e40]">UnB Campus Gama</span>
+            <span className="text-slate-300">/</span>
+            <span>Rede Gastronômica Universitária</span>
+            <span className="text-slate-300">/</span>
+            <span className="text-[#006e22] font-semibold">Credenciamento Ativo</span>
           </div>
 
           {/* Headline & Campus Narrative */}
@@ -91,7 +84,7 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
               <span>DAC • Decanato de Assuntos Comunitários</span>
             </div>
             <h1 className="text-2xl sm:text-4xl text-[#001e40] font-bold tracking-tight mb-2">
-              Alimentação autorizada e segura no Campus Darcy Ribeiro
+              Alimentação autorizada e segura no Campus Gama
             </h1>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
               Encontre vendedores ambulantes e quiosques com selo sanitário oficial da UnB. Peça direto no WhatsApp sem taxas adicionais e com procedência comprovada.
@@ -109,7 +102,7 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
                   type="text"
                   value={searchQuery}
                   onChange={(e) => onSearchChange(e.target.value)}
-                  placeholder="Busque por marmitas, lanches, açaí, café, ICC Norte, BSAN, etc..."
+                  placeholder="Busque por marmitas, lanches, açaí, café, UAC, UED, Convivência, etc..."
                   className="w-full pl-12 pr-4 py-3 bg-[#f0f3ff]/60 rounded-xl text-slate-900 text-sm placeholder:text-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#003366] transition-all"
                 />
               </div>
@@ -163,31 +156,7 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
         </div>
       </section>
 
-      {/* Strict Compliance Notification Bar */}
-      <section className="w-full bg-[#f0f3ff] border-y border-slate-200/80 px-4 lg:px-8 py-3">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-[#80fd88]/30 flex items-center justify-center shrink-0 text-[#007525]">
-              <span className="material-symbols-outlined text-lg">gavel</span>
-            </div>
-            <div>
-              <span className="text-xs font-bold text-[#001e40] block">
-                Regra de Segurança Alimentar Ativa (Edital 2025/UnB)
-              </span>
-              <p className="text-xs text-slate-600">
-                Apenas vendedores com status <strong className="text-[#006e22]">REGULAR</strong> e <strong className="text-[#006e22]">ABERTO AGORA</strong> estão visíveis. Pontos pendentes ou notificados são suspensos do mapa automaticamente.
-              </p>
-            </div>
-          </div>
 
-          <div className="flex items-center gap-2 shrink-0">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#006e22]"></span>
-            <span className="text-xs font-bold text-[#006e22] uppercase tracking-wider">
-              Auditado em Tempo Real
-            </span>
-          </div>
-        </div>
-      </section>
 
       {/* Interactive Filter Toolbar & Sector Pills */}
       <section className="w-full py-4 px-4 lg:px-8 bg-[#f9f9ff]">
@@ -199,12 +168,13 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
             </span>
             {[
               { id: 'todos', label: 'Todos os Polos' },
-              { id: 'icc-norte', label: 'ICC Norte' },
-              { id: 'icc-sul', label: 'ICC Sul' },
-              { id: 'bsa', label: 'Bolsão da BSA' },
-              { id: 'ft', label: 'Faculdade de Tecnologia (FT)' },
-              { id: 'bce', label: 'Biblioteca Central (BCE)' },
-              { id: 'pat', label: 'Pavilhão Anísio Teixeira (PAT)' }
+              { id: 'uac', label: 'UAC (Unidade Acadêmica)' },
+              { id: 'ued', label: 'UED (Docência & Labs)' },
+              { id: 'ldtea', label: 'LDTEA (Laboratórios)' },
+              { id: 'ru-mesp', label: 'RU / MESP' },
+              { id: 'convivencia', label: 'Centro de Convivência' },
+              { id: 'biblioteca', label: 'Biblioteca FGA' },
+              { id: 'estacionamento', label: 'Estacionamento Central' }
             ].map((zone) => (
               <button
                 key={zone.id}
@@ -396,7 +366,7 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
                 Coma com tranquilidade em pontos mapeados pelo DAC
               </h3>
               <p className="text-xs md:text-sm text-slate-600 mb-6 leading-relaxed">
-                Cada barraquinha física conta com um totem ou adesivo com QR Code exclusivo. Ao apontar sua câmera, você consulta em tempo real se o ambulante está autorizado a operar no Darcy Ribeiro.
+                Cada barraquinha física conta com um totem ou adesivo com QR Code exclusivo. Ao apontar sua câmera, você consulta em tempo real se o ambulante está autorizado a operar no Campus Gama.
               </p>
 
               <div className="grid grid-cols-3 gap-3 mb-6">
@@ -431,7 +401,7 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
                 <div className="relative z-10 bg-white/90 backdrop-blur-md p-3.5 rounded-xl shadow-md flex items-center justify-between text-[#001e40]">
                   <div className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-[#006e22]">fmd_good</span>
-                    <span className="text-xs font-bold">Campus Darcy Ribeiro • Asa Norte</span>
+                    <span className="text-xs font-bold">Campus Gama (FGA/FCTE)</span>
                   </div>
                   <span className="text-[11px] font-bold text-[#006e22] bg-[#80fd88]/30 px-2.5 py-0.5 rounded-full">
                     Monitoramento Ativo
@@ -457,7 +427,7 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
                 <span className="text-lg font-bold text-[#001e40] tracking-tight">UniEats</span>
               </div>
               <p className="text-xs text-slate-500 leading-relaxed">
-                Plataforma institucional de alimentação sustentável, mapeamento de vendedores credenciados e convivência no Campus Darcy Ribeiro - Universidade de Brasília.
+                Plataforma institucional de alimentação sustentável, mapeamento de vendedores credenciados e convivência no Campus Gama - Universidade de Brasília.
               </p>
               <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#80fd88]/30 text-[#007525] text-[11px] font-bold">
                 <span className="material-symbols-outlined text-xs">verified</span>
@@ -468,11 +438,11 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
             <div className="space-y-2">
               <h4 className="text-xs font-bold text-[#001e40] uppercase tracking-wider">Polos & Setores</h4>
               <ul className="space-y-1.5 text-xs text-slate-500">
-                <li className="hover:text-[#001e40] cursor-pointer">ICC Norte e ICC Sul</li>
-                <li className="hover:text-[#001e40] cursor-pointer">Restaurante Universitário (RU)</li>
-                <li className="hover:text-[#001e40] cursor-pointer">Faculdade de Tecnologia (FT)</li>
-                <li className="hover:text-[#001e40] cursor-pointer">Pavilhão Anísio Teixeira (PAT)</li>
-                <li className="hover:text-[#001e40] cursor-pointer">Biblioteca Central (BCE)</li>
+                <li className="hover:text-[#001e40] cursor-pointer">UAC (Unidade Acadêmica)</li>
+                <li className="hover:text-[#001e40] cursor-pointer">UED (Ensino & Docência)</li>
+                <li className="hover:text-[#001e40] cursor-pointer">LDTEA (Laboratórios de Engenharia)</li>
+                <li className="hover:text-[#001e40] cursor-pointer">Restaurante Universitário (RU / MESP)</li>
+                <li className="hover:text-[#001e40] cursor-pointer">Centro de Convivência & Biblioteca</li>
               </ul>
             </div>
 

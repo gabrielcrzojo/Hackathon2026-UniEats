@@ -121,7 +121,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
         <div className="px-4 mb-4">
           <div className="px-3 py-1.5 bg-[#e7eeff] rounded-xl flex items-center justify-between border border-[#d8e3fb]">
             <span className="text-xs text-slate-500 font-medium">Polo UnB:</span>
-            <span className="text-xs text-[#001e40] font-bold">Darcy Ribeiro</span>
+            <span className="text-xs text-[#001e40] font-bold">Campus Gama</span>
           </div>
         </div>
 
@@ -223,7 +223,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               Administração Campus UnB
             </h1>
             <p className="text-xs lg:text-sm text-slate-600 max-w-2xl mt-0.5">
-              Painel central de conformidade sanitária, ocupação de espaço público e auditoria de alvarás no Campus Universitário Darcy Ribeiro.
+              Painel central de conformidade sanitária, ocupação de espaço público e auditoria de alvarás no Campus Universitário Gama (FGA/FCTE).
             </p>
           </div>
 
@@ -480,7 +480,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <h2 className="text-lg font-bold text-[#001e40]">
-                Ocupação Espacial • Campus Darcy Ribeiro
+                Ocupação Espacial • Campus Gama
               </h2>
               <p className="text-xs text-slate-500">
                 Zonas delimitadas por resolução conjunta DAC/SINFRA para pontos de alimentação ambulante e quiosques.

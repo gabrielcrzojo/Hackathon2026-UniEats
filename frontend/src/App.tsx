@@ -165,7 +165,7 @@ export default function App() {
       pointId: `PONTO-NOVO-${Math.floor(10 + Math.random() * 90)}`,
       pointName: `Candidato • Polo ${data.zone.toUpperCase()}`,
       zone: data.zone,
-      zoneLabel: `Campus Darcy Ribeiro (${data.zone.toUpperCase()})`,
+      zoneLabel: `Campus Gama (${data.zone.toUpperCase()})`,
       category: data.category,
       categoryLabel: data.category === 'marmitas' ? 'Almoço & Marmitas' : 'Lanches Rápidos',
       alvaraNumber: `DAC-PEND-${Math.floor(100 + Math.random() * 900)}`,
