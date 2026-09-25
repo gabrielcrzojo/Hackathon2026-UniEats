@@ -44,12 +44,9 @@ export const Header: React.FC<HeaderProps> = ({
             title="UniEats Campus UnB"
           >
             <img
-              src="https://lh3.googleusercontent.com/aida/AEtjO1Xtwe0ZpdCMLXIjydUKzUWlTHadDe2Mx_9itSNFuiChhAUb-wBMO3H4h8N9mbIKL4wxuH1OyKk00iu5ydeN9_SS5xnoztBouQEnzojDmF45c4RabCkCKFi4TsjNokmAHgxjpe0iAYcV0yRYlAIuhGian6xXpkC_cRT5TOF9bJFNQM9rY1Glt1zoARh8VKWuFkmrUFPu4LJK21BacaSRkyOdziB2NsdX1WlJmDJe_wqk9HbgOqdoCoYB"
+              src="/logo.png"
               alt="UniEats Campus Logo"
-              className="h-8 w-auto object-contain transition-transform group-hover:scale-105"
-              onError={(e) => {
-                (e.target as HTMLElement).style.display = 'none';
-              }}
+              className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </button>
 

@@ -193,12 +193,12 @@ export const VendorPanelView: React.FC<VendorPanelViewProps> = ({
                   </div>
 
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                    <span className="text-slate-400 block text-[10px] uppercase font-bold">Avaliação dos Estudantes</span>
-                    <div className="flex items-center gap-1.5 mt-0.5">
-                      <span className="material-symbols-outlined text-amber-500 text-sm">star</span>
-                      <span className="text-sm font-bold text-slate-800">{vendor.rating.toFixed(1)}</span>
-                      <span className="text-slate-500">({vendor.reviewsCount} avaliações)</span>
-                    </div>
+                    <span className="text-slate-400 block text-[10px] uppercase font-bold">Status no Campus</span>
+                    <span className="text-sm font-bold text-[#006e22] flex items-center gap-1.5 mt-0.5">
+                      <span className="w-2 h-2 rounded-full bg-[#006e22]"></span>
+                      Credenciado DAC / UnB
+                    </span>
+                    <span className="text-slate-500 block mt-0.5">Alvará ativo e regularizado</span>
                   </div>
                 </div>
 

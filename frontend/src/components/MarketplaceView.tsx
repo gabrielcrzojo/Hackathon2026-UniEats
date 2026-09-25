@@ -23,7 +23,7 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<FoodCategory>('todos');
   const [selectedZone, setSelectedZone] = useState<CampusZone>('todos');
-  const [sortBy, setSortBy] = useState<'rating' | 'price' | 'recent'>('rating');
+  const [sortBy, setSortBy] = useState<'recent' | 'price'>('recent');
 
   // Filter & sort
   const filteredVendors = useMemo(() => {
@@ -46,16 +46,15 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
         return matchesCat && matchesZone && matchesQuery;
       })
       .sort((a, b) => {
-        if (sortBy === 'rating') return b.rating - a.rating;
         if (sortBy === 'price') return a.highlightPrice - b.highlightPrice;
-        return 0;
+        return b.daysRemainingOrExpired - a.daysRemainingOrExpired;
       });
   }, [vendors, selectedCategory, selectedZone, searchQuery, sortBy]);
 
   const handleResetFilters = () => {
     setSelectedCategory('todos');
     setSelectedZone('todos');
-    setSortBy('rating');
+    setSortBy('recent');
     onSearchChange('');
     onShowToast('Filtros restaurados!');
   };
@@ -198,9 +197,8 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
               onChange={(e) => setSortBy(e.target.value as any)}
               className="bg-white text-slate-800 text-xs font-semibold px-3 py-1.5 rounded-lg shadow-xs border border-slate-200 focus:outline-none cursor-pointer"
             >
-              <option value="rating">Maior Avaliação (Alunos)</option>
-              <option value="price">Menor Preço Universitário</option>
               <option value="recent">Credenciamento Mais Recente</option>
+              <option value="price">Menor Preço Universitário</option>
             </select>
           </div>
         </div>
@@ -269,17 +267,10 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
                       </span>
                     </div>
 
-                    {/* Price & Hours Badge on Image Base */}
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white">
-                      <div className="flex items-center gap-1 text-xs">
-                        <span className="material-symbols-outlined text-sm text-[#80fd88]">schedule</span>
-                        <span>{vendor.hours}</span>
-                      </div>
-                      <div className="flex items-center gap-1 text-xs bg-[#001e40]/80 px-2 py-0.5 rounded-md backdrop-blur-sm">
-                        <span className="material-symbols-outlined text-[#80fd88] text-sm">star</span>
-                        <span className="font-bold">{vendor.rating.toFixed(1)}</span>
-                        <span className="text-slate-300 text-[10px]">({vendor.reviewsCount})</span>
-                      </div>
+                    {/* Hours Badge on Image Base */}
+                    <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-xs text-white bg-[#001e40]/85 px-2.5 py-1 rounded-lg backdrop-blur-sm shadow-xs">
+                      <span className="material-symbols-outlined text-sm text-[#80fd88]">schedule</span>
+                      <span className="font-medium">{vendor.hours}</span>
                     </div>
                   </div>
 
@@ -420,11 +411,10 @@ export const MarketplaceView: React.FC<MarketplaceViewProps> = ({
             <div className="space-y-3 md:col-span-1">
               <div className="flex items-center gap-2">
                 <img
-                  src="https://lh3.googleusercontent.com/aida/AEtjO1Xtwe0ZpdCMLXIjydUKzUWlTHadDe2Mx_9itSNFuiChhAUb-wBMO3H4h8N9mbIKL4wxuH1OyKk00iu5ydeN9_SS5xnoztBouQEnzojDmF45c4RabCkCKFi4TsjNokmAHgxjpe0iAYcV0yRYlAIuhGian6xXpkC_cRT5TOF9bJFNQM9rY1Glt1zoARh8VKWuFkmrUFPu4LJK21BacaSRkyOdziB2NsdX1WlJmDJe_wqk9HbgOqdoCoYB"
+                  src="/logo.png"
                   alt="UniEats Logo"
-                  className="h-7 w-auto object-contain"
+                  className="h-8 w-auto object-contain"
                 />
-                <span className="text-lg font-bold text-[#001e40] tracking-tight">UniEats</span>
               </div>
               <p className="text-xs text-slate-500 leading-relaxed">
                 Plataforma institucional de alimentação sustentável, mapeamento de vendedores credenciados e convivência no Campus Gama - Universidade de Brasília.

@@ -49,8 +49,8 @@ export interface Vendor {
   daysRemainingOrExpired: number; // positive = days until expiry, negative = days expired
   isOpen: boolean;
   hours: string;
-  rating: number;
-  reviewsCount: number;
+  rating?: number;
+  reviewsCount?: number;
   highlightDish: string;
   highlightPrice: number;
   description: string;

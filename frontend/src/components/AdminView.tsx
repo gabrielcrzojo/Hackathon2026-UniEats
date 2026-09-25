@@ -107,12 +107,11 @@ export const AdminView: React.FC<AdminViewProps> = ({
         <div className="px-6 mb-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img
-              src="https://lh3.googleusercontent.com/aida/AEtjO1Xtwe0ZpdCMLXIjydUKzUWlTHadDe2Mx_9itSNFuiChhAUb-wBMO3H4h8N9mbIKL4wxuH1OyKk00iu5ydeN9_SS5xnoztBouQEnzojDmF45c4RabCkCKFi4TsjNokmAHgxjpe0iAYcV0yRYlAIuhGian6xXpkC_cRT5TOF9bJFNQM9rY1Glt1zoARh8VKWuFkmrUFPu4LJK21BacaSRkyOdziB2NsdX1WlJmDJe_wqk9HbgOqdoCoYB"
+              src="/logo.png"
               alt="UniEats Logo"
-              className="h-7 w-auto object-contain"
+              className="h-8 w-auto object-contain"
             />
             <div className="flex flex-col">
-              <span className="text-base font-bold text-[#001e40] leading-none">UniEats</span>
               <span className="text-[11px] text-slate-500 font-medium">Gestão & Controle</span>
             </div>
           </div>
